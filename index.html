@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tulsa Water Heater Guy — Same-Week Repair &amp; Replacement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --steel:#E7ECEC;
+    --steel-dark:#D7DEDD;
+    --ink:#1C2A33;
+    --ink-soft:#3E505A;
+    --copper:#BE6A3A;
+    --copper-deep:#9C5127;
+    --brass:#E3A94A;
+    --white:#FBFAF7;
+    --line:#B9C4C4;
+    --danger:#B4432E;
+    --radius:2px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--steel);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .display{font-family:'Bebas Neue',sans-serif; letter-spacing:0.02em;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+  .tag{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600;
+    letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--ink-soft);
+    border:1px solid var(--line); background:var(--white);
+    padding:6px 12px; border-radius:var(--radius);
+  }
+  .tag::before{content:"●"; color:var(--copper); font-size:8px;}
+
+  .topbar{
+    background:var(--ink); color:var(--steel);
+    font-family:'IBM Plex Mono',monospace; font-size:13px;
+    padding:8px 0;
+  }
+  .topbar .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;}
+  .topbar .phone{color:var(--brass); font-weight:600; text-decoration:none;}
+
+  header.site{padding:28px 0 0;}
+  header.site .wrap{display:flex; justify-content:space-between; align-items:center;}
+  .wordmark{display:flex; align-items:center; gap:12px;}
+  .wordmark .plate{
+    display:flex; flex-direction:column; line-height:0.95;
+  }
+  .wordmark .plate .small{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em;
+    color:var(--copper-deep); text-transform:uppercase; margin-bottom:2px;
+  }
+  .wordmark .plate .big{font-family:'Bebas Neue',sans-serif; font-size:28px; color:var(--ink);}
+  .call-btn{
+    background:var(--copper); color:var(--white); text-decoration:none;
+    font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:14px;
+    padding:12px 20px; border-radius:var(--radius);
+    border:1px solid var(--copper-deep);
+    white-space:nowrap;
+  }
+  .call-btn:hover{background:var(--copper-deep);}
+
+  .hero{padding:56px 0 40px;}
+  .hero .wrap{display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center;}
+  .hero h1{
+    font-size:clamp(48px,7vw,84px); line-height:0.92; color:var(--ink);
+    margin-bottom:20px;
+  }
+  .hero h1 em{font-style:normal; color:var(--copper);}
+  .hero p.lede{font-size:18px; color:var(--ink-soft); max-width:46ch; margin-bottom:28px;}
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:20px;}
+  .btn-primary{
+    background:var(--ink); color:var(--white); text-decoration:none;
+    font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:14px;
+    padding:16px 26px; border-radius:var(--radius);
+    text-transform:uppercase; letter-spacing:0.06em;
+  }
+  .btn-primary:hover{background:var(--copper-deep);}
+  .btn-secondary{
+    background:transparent; color:var(--ink); text-decoration:none;
+    font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:14px;
+    padding:16px 26px; border-radius:var(--radius);
+    border:1px solid var(--ink);
+    text-transform:uppercase; letter-spacing:0.06em;
+  }
+  .hero-note{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink-soft);}
+
+  .gauge-frame{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius);
+    padding:28px; text-align:center;
+  }
+  .gauge-frame .cap{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.15em;
+    text-transform:uppercase; color:var(--ink-soft); margin-top:14px;
+  }
+  .gauge-frame .reading{
+    font-family:'Bebas Neue',sans-serif; font-size:22px; color:var(--copper-deep); margin-top:2px;
+  }
+  #needle{ transform-origin:150px 150px; transform:rotate(-90deg); transition:transform 1.6s cubic-bezier(.2,.9,.2,1);}
+
+  .areas{background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:18px 0;}
+  .areas .wrap{display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:center;}
+  .areas .label{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--ink-soft); margin-right:6px;}
+
+  section{padding:64px 0;}
+  .section-head{max-width:60ch; margin-bottom:40px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.15em;
+    text-transform:uppercase; color:var(--copper-deep); margin-bottom:10px; display:block;
+  }
+  h2{font-family:'Bebas Neue',sans-serif; font-size:clamp(32px,4vw,48px); color:var(--ink); line-height:1;}
+  h2 + p{margin-top:12px; color:var(--ink-soft); font-size:16px;}
+
+  .ticket{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius);
+    padding:8px;
+  }
+  .ticket-row{
+    display:flex; align-items:flex-start; gap:14px;
+    padding:16px 14px; border-bottom:1px dashed var(--line);
+  }
+  .ticket-row:last-child{border-bottom:none;}
+  .ticket-row .mark{
+    flex:0 0 auto; width:22px; height:22px; border:1.5px solid var(--copper);
+    border-radius:50%; margin-top:2px;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--copper-deep);
+  }
+  .ticket-row p{font-size:15px; color:var(--ink);}
+
+  .svc-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;}
+  .svc{background:var(--white); padding:26px;}
+  .svc .num{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--copper-deep); margin-bottom:8px;}
+  .svc h3{font-family:'Bebas Neue',sans-serif; font-size:24px; color:var(--ink); margin-bottom:8px;}
+  .svc p{font-size:14px; color:var(--ink-soft);}
+
+  .cta-section{background:var(--ink); color:var(--steel);}
+  .cta-section .eyebrow{color:var(--brass);}
+  .cta-section h2{color:var(--white);}
+  .cta-section p.lede{color:#B9C4C4;}
+  .form-card{
+    background:var(--white); border-radius:var(--radius); padding:32px;
+    display:grid; gap:14px; max-width:520px;
+  }
+  .form-card label{font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--ink-soft); display:block; margin-bottom:6px;}
+  .form-card input, .form-card select{
+    width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:var(--radius);
+    font-family:'Inter',sans-serif; font-size:15px; background:var(--steel); color:var(--ink);
+  }
+  .form-card .row2{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .form-card button{
+    background:var(--copper); color:var(--white); border:none; padding:16px; border-radius:var(--radius);
+    font-family:'IBM Plex Mono',monospace; font-weight:600; text-transform:uppercase; letter-spacing:0.06em;
+    font-size:14px; cursor:pointer; margin-top:6px;
+  }
+  .form-card button:hover{background:var(--copper-deep);}
+  .cta-grid{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start;}
+  .cta-side{display:flex; flex-direction:column; gap:22px;}
+  .cta-fact{display:flex; gap:14px; align-items:flex-start;}
+  .cta-fact .dot{width:8px; height:8px; border-radius:50%; background:var(--brass); margin-top:8px; flex:0 0 auto;}
+  .cta-fact p{color:#D7DEDD; font-size:15px;}
+  .cta-fact strong{color:var(--white); display:block; font-size:15px;}
+
+  footer{padding:36px 0; border-top:1px solid var(--line);}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; align-items:center;}
+  footer .fine{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink-soft);}
+
+  @media(max-width:860px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero .gauge-frame{order:-1; max-width:320px; margin:0 auto;}
+    .svc-grid{grid-template-columns:1fr;}
+    .cta-grid{grid-template-columns:1fr;}
+    .form-card .row2{grid-template-columns:1fr;}
+    header.site .wrap{flex-direction:column; gap:14px; align-items:flex-start;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    #needle{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="wrap">
+      <span>SERVING TULSA &amp; SURROUNDING TOWNS</span>
+      <a class="phone" href="tel:9180000000">📞 (918) 000-0000 — ADD TRACKING NUMBER</a>
+    </div>
+  </div>
+
+  <header class="site">
+    <div class="wrap">
+      <div class="wordmark">
+        <div class="plate">
+          <span class="small">Local · On-Call</span>
+          <span class="big">TULSA WATER HEATER GUY</span>
+        </div>
+      </div>
+      <a href="#quote" class="call-btn">GET A STRAIGHT ANSWER →</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1 class="display">COLD SHOWER?<br>THAT'S A <em>NO.</em></h1>
+        <p class="lede">Rusty water, popping tank, no hot water at all — we diagnose it straight, fix it fast, and don't upsell you on stuff you don't need.</p>
+        <div class="hero-ctas">
+          <a href="tel:9180000000" class="btn-primary">Call (918) 000-0000</a>
+          <a href="#signs" class="btn-secondary">Not sure it's the heater?</a>
+        </div>
+        <p class="hero-note">Most repair calls scheduled same week · Tulsa metro &amp; surrounding towns</p>
+      </div>
+
+      <div class="gauge-frame">
+        <svg viewBox="0 0 300 190" width="300" height="190">
+          <path d="M 30 160 A 120 120 0 0 1 270 160" fill="none" stroke="var(--line)" stroke-width="14"/>
+          <path d="M 30 160 A 120 120 0 0 1 150 40" fill="none" stroke="var(--ink-soft)" stroke-width="14"/>
+          <path d="M 150 40 A 120 120 0 0 1 270 160" fill="none" stroke="var(--copper)" stroke-width="14"/>
+          <circle cx="150" cy="160" r="9" fill="var(--ink)"/>
+          <line id="needle" x1="150" y1="160" x2="150" y2="55" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/>
+          <text x="38" y="185" font-family="IBM Plex Mono" font-size="11" fill="var(--ink-soft)">COLD</text>
+          <text x="240" y="185" font-family="IBM Plex Mono" font-size="11" fill="var(--copper-deep)">HOT</text>
+        </svg>
+        <div class="cap">CURRENT STATUS</div>
+        <div class="reading">DIAGNOSED &amp; FIXED</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="areas">
+    <div class="wrap">
+      <span class="label">Service Area</span>
+      <span class="tag">Tulsa</span>
+      <span class="tag">Broken Arrow</span>
+      <span class="tag">Owasso</span>
+      <span class="tag">Bixby</span>
+      <span class="tag">Jenks</span>
+      <span class="tag">Sand Springs</span>
+      <span class="tag">Claremore</span>
+      <span class="tag">Sapulpa</span>
+      <span class="tag">Coweta</span>
+    </div>
+  </div>
+
+  <section id="signs">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Inspection Checklist</span>
+        <h2>SIX SIGNS YOUR WATER HEATER IS ON ITS WAY OUT</h2>
+        <p>If two or more of these sound familiar, it's worth a look before it fails on you completely — usually at the worst possible time.</p>
+      </div>
+      <div class="ticket">
+        <div class="ticket-row"><div class="mark">01</div><p>It's more than 10 years old (check the sticker on the tank).</p></div>
+        <div class="ticket-row"><div class="mark">02</div><p>Water coming out with a rust or brown tint.</p></div>
+        <div class="ticket-row"><div class="mark">03</div><p>Popping, rumbling, or banging sounds from inside the tank.</p></div>
+        <div class="ticket-row"><div class="mark">04</div><p>Water pooling on the floor around the base.</p></div>
+        <div class="ticket-row"><div class="mark">05</div><p>Hot water runs out faster than it used to.</p></div>
+        <div class="ticket-row"><div class="mark">06</div><p>Pilot light won't stay lit, or the breaker keeps tripping.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What We Handle</span>
+        <h2>REPAIR, REPLACE, OR CONVERT — YOUR CALL</h2>
+      </div>
+      <div class="svc-grid">
+        <div class="svc">
+          <div class="num">SVC / 01</div>
+          <h3>Repair</h3>
+          <p>Same-visit diagnosis on leaks, no-heat, and strange noises. Fixed on the spot when the part's on the truck.</p>
+        </div>
+        <div class="svc">
+          <div class="num">SVC / 02</div>
+          <h3>Full Replacement</h3>
+          <p>Tank going out for good? Straight pricing on a new unit, installed and hauled away in one visit.</p>
+        </div>
+        <div class="svc">
+          <div class="num">SVC / 03</div>
+          <h3>Tankless Conversion</h3>
+          <p>Endless hot water, smaller footprint. We'll walk you through whether it's actually worth it for your house.</p>
+        </div>
+        <div class="svc">
+          <div class="num">SVC / 04</div>
+          <h3>Emergency Leak Response</h3>
+          <p>Active leak flooding a closet or garage? That call jumps the line.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="quote">
+    <div class="wrap">
+      <div class="cta-grid">
+        <div>
+          <span class="eyebrow">Tell Us What's Going On</span>
+          <h2 style="margin-bottom:24px;">GET A STRAIGHT ANSWER, NOT A SALES PITCH</h2>
+          <div class="cta-side">
+            <div class="cta-fact"><div class="dot"></div><p><strong>Direct to us</strong>Every submission and call goes straight to the people actually doing the work — not a call center.</p></div>
+            <div class="cta-fact"><div class="dot"></div><p><strong>No pressure</strong>You get a real assessment. If it's a $20 part fix, that's what we'll tell you.</p></div>
+            <div class="cta-fact"><div class="dot"></div><p><strong>Local, not corporate</strong>Backed by Integrity Plumbing DC, LLC — a licensed Oklahoma plumbing contractor.</p></div>
+          </div>
+        </div>
+
+        <form class="form-card" onsubmit="event.preventDefault(); document.getElementById('form-success').style.display='block'; this.style.display='none';">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" type="text" required placeholder="Your name">
+          </div>
+          <div class="row2">
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" type="tel" required placeholder="(918) 555-0123">
+            </div>
+            <div>
+              <label for="city">City / Zip</label>
+              <input id="city" type="text" required placeholder="Owasso, 74055">
+            </div>
+          </div>
+          <div>
+            <label for="issue">What's going on?</label>
+            <select id="issue">
+              <option>No hot water at all</option>
+              <option>Leaking / pooling water</option>
+              <option>Rusty or discolored water</option>
+              <option>Strange noises from the tank</option>
+              <option>Want a quote on a new unit</option>
+              <option>Not sure — need it looked at</option>
+            </select>
+          </div>
+          <button type="submit">Send it our way →</button>
+        </form>
+        <div id="form-success" style="display:none; background:var(--white); border-radius:var(--radius); padding:32px;">
+          <h3 style="font-family:'Bebas Neue'; font-size:24px; color:var(--copper-deep); margin-bottom:8px;">GOT IT.</h3>
+          <p style="color:var(--ink-soft); font-size:15px;">This demo form isn't wired up yet — next step is connecting it to a real inbox/text alert so submissions reach us immediately.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span class="fine">TULSA WATER HEATER GUY — A MARKETING NAME FOR SERVICES PROVIDED BY INTEGRITY PLUMBING DC, LLC</span>
+      <span class="fine">(918) 000-0000</span>
+    </div>
+  </footer>
+
+<script>
+  window.addEventListener('load', () => {
+    const needle = document.getElementById('needle');
+    setTimeout(() => { needle.style.transform = 'rotate(75deg)'; }, 300);
+  });
+</script>
+
+</body>
+</html>
